@@ -20,4 +20,12 @@ public class FractionShould {
         is("1/2")
     );
   }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void notAllowZeroDenominator() {
+    new Fraction.Builder()
+        .withNumerator(1)
+        .withDenominator(0)
+        .build();
+  }
 }

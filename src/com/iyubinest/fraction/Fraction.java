@@ -57,6 +57,7 @@ final class Fraction {
     }
 
     public Fraction build() {
+      Preconditions.check(denominator != 0, "Invalid denominator");
       return new Fraction(this);
     }
   }
