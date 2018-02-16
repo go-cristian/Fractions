@@ -1,7 +1,5 @@
 package com.iyubinest.fraction;
 
-import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -18,6 +16,33 @@ public class FractionShould {
             .build()
             .toString(),
         is("1/2")
+    );
+  }
+
+  @Test
+  public void representsInt() {
+    assertThat(
+        new Fraction.Builder()
+            .withNumerator(1)
+            .build()
+            .toString(),
+        is("1/1")
+    );
+  }
+
+  @Test
+  public void representsWithFactory() {
+    assertThat(
+        Fraction.of(1, 2).toString(),
+        is("1/2")
+    );
+  }
+
+  @Test
+  public void representsIntWithFactory() {
+    assertThat(
+        Fraction.of(1).toString(),
+        is("1/1")
     );
   }
 

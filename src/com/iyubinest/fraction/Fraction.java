@@ -4,11 +4,26 @@ import java.util.Objects;
 
 final class Fraction {
 
+  public static Fraction of(int numerator) {
+    return new Fraction(numerator);
+  }
+
+  public static Fraction of(int numerator, int denominator) {
+    return new Fraction(numerator, denominator);
+  }
+
+  private static final int DEFAULT_DENOMINATOR = 1;
+
   private final int numerator;
+
   private final int denominator;
 
   private Fraction(Builder builder) {
     this(builder.numerator, builder.denominator);
+  }
+
+  private Fraction(int numerator) {
+    this(numerator, DEFAULT_DENOMINATOR);
   }
 
   private Fraction(int numerator, int denominator) {
@@ -44,7 +59,7 @@ final class Fraction {
   public static final class Builder {
 
     private int numerator;
-    private int denominator;
+    private int denominator = DEFAULT_DENOMINATOR;
 
     public Builder withNumerator(int numerator) {
       this.numerator = numerator;
