@@ -12,18 +12,62 @@ public class SubstractionShould {
     assertThat(
         new Substraction(
             new Fraction.Builder()
-                .withNumerator(3)
+                .withNumerator(7)
                 .withDenominator(5)
                 .build(),
             new Fraction.Builder()
-                .withNumerator(5)
-                .withDenominator(10)
+                .withNumerator(2)
+                .withDenominator(5)
                 .build()
         ).value(),
         is(
             new Fraction.Builder()
+                .withNumerator(5)
+                .withDenominator(5)
+                .build()
+        )
+    );
+  }
+
+  @Test
+  public void substractIsZero() {
+    assertThat(
+        new Substraction(
+            new Fraction.Builder()
                 .withNumerator(1)
-                .withDenominator(10)
+                .withDenominator(5)
+                .build(),
+            new Fraction.Builder()
+                .withNumerator(1)
+                .withDenominator(5)
+                .build()
+        ).value(),
+        is(
+            new Fraction.Builder()
+                .withNumerator(0)
+                .withDenominator(5)
+                .build()
+        )
+    );
+  }
+
+  @Test
+  public void substractsResultNegative() {
+    assertThat(
+        new Substraction(
+            new Fraction.Builder()
+                .withNumerator(1)
+                .withDenominator(5)
+                .build(),
+            new Fraction.Builder()
+                .withNumerator(2)
+                .withDenominator(5)
+                .build()
+        ).value(),
+        is(
+            new Fraction.Builder()
+                .withNumerator(-1)
+                .withDenominator(5)
                 .build()
         )
     );

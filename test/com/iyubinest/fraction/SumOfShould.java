@@ -12,18 +12,18 @@ public class SumOfShould {
     assertThat(
         new SumOf(
             new Fraction.Builder()
-                .withNumerator(3)
-                .withDenominator(5)
+                .withNumerator(1)
+                .withDenominator(2)
                 .build(),
             new Fraction.Builder()
-                .withNumerator(5)
-                .withDenominator(10)
+                .withNumerator(1)
+                .withDenominator(2)
                 .build()
         ).value(),
         is(
             new Fraction.Builder()
-                .withNumerator(11)
-                .withDenominator(10)
+                .withNumerator(2)
+                .withDenominator(2)
                 .build()
         )
     );
