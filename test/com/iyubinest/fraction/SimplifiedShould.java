@@ -11,16 +11,10 @@ public class SimplifiedShould {
   public void simplifies() {
     assertThat(
         new Simplified(
-            new Fraction.Builder()
-                .withNumerator(2)
-                .withDenominator(4)
-                .build()
+            Fraction.of(2, 4)
         ).value(),
         is(
-            new Fraction.Builder()
-                .withNumerator(1)
-                .withDenominator(2)
-                .build()
+            Fraction.of(1, 2)
         )
     );
   }

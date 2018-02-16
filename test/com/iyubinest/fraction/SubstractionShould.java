@@ -11,20 +11,11 @@ public class SubstractionShould {
   public void substracts() {
     assertThat(
         new Substraction(
-            new Fraction.Builder()
-                .withNumerator(7)
-                .withDenominator(5)
-                .build(),
-            new Fraction.Builder()
-                .withNumerator(2)
-                .withDenominator(5)
-                .build()
+            Fraction.of(3, 2),
+            Fraction.of(1, 2)
         ).value(),
         is(
-            new Fraction.Builder()
-                .withNumerator(5)
-                .withDenominator(5)
-                .build()
+            Fraction.of(2, 2)
         )
     );
   }
@@ -33,20 +24,11 @@ public class SubstractionShould {
   public void substractIsZero() {
     assertThat(
         new Substraction(
-            new Fraction.Builder()
-                .withNumerator(1)
-                .withDenominator(5)
-                .build(),
-            new Fraction.Builder()
-                .withNumerator(1)
-                .withDenominator(5)
-                .build()
+            Fraction.of(1, 2),
+            Fraction.of(1, 2)
         ).value(),
         is(
-            new Fraction.Builder()
-                .withNumerator(0)
-                .withDenominator(5)
-                .build()
+            Fraction.of(0, 2)
         )
     );
   }
@@ -55,20 +37,11 @@ public class SubstractionShould {
   public void substractsResultNegative() {
     assertThat(
         new Substraction(
-            new Fraction.Builder()
-                .withNumerator(1)
-                .withDenominator(5)
-                .build(),
-            new Fraction.Builder()
-                .withNumerator(2)
-                .withDenominator(5)
-                .build()
+            Fraction.of(1, 2),
+            Fraction.of(2, 2)
         ).value(),
         is(
-            new Fraction.Builder()
-                .withNumerator(-1)
-                .withDenominator(5)
-                .build()
+            Fraction.of(-1, 2)
         )
     );
   }

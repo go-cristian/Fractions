@@ -11,20 +11,11 @@ public class MultiplyShould {
   public void multiplies() {
     assertThat(
         new Multiply(
-            new Fraction.Builder()
-                .withNumerator(3)
-                .withDenominator(5)
-                .build(),
-            new Fraction.Builder()
-                .withNumerator(5)
-                .withDenominator(10)
-                .build()
+            Fraction.of(2, 4),
+            Fraction.of(2, 4)
         ).value(),
         is(
-            new Fraction.Builder()
-                .withNumerator(15)
-                .withDenominator(50)
-                .build()
+            Fraction.of(4, 16)
         )
     );
   }

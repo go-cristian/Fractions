@@ -11,20 +11,11 @@ public class DivisionShould {
   public void divides() {
     assertThat(
         new Division(
-            new Fraction.Builder()
-                .withNumerator(4)
-                .withDenominator(5)
-                .build(),
-            new Fraction.Builder()
-                .withNumerator(3)
-                .withDenominator(9)
-                .build()
+            Fraction.of(2, 4),
+            Fraction.of(2, 4)
         ).value(),
         is(
-            new Fraction.Builder()
-                .withNumerator(36)
-                .withDenominator(15)
-                .build()
+            Fraction.of(8, 8)
         )
     );
   }

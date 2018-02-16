@@ -11,20 +11,11 @@ public class SumOfShould {
   public void sums() {
     assertThat(
         new SumOf(
-            new Fraction.Builder()
-                .withNumerator(1)
-                .withDenominator(2)
-                .build(),
-            new Fraction.Builder()
-                .withNumerator(1)
-                .withDenominator(2)
-                .build()
+            Fraction.of(1, 2),
+            Fraction.of(2, 2)
         ).value(),
         is(
-            new Fraction.Builder()
-                .withNumerator(2)
-                .withDenominator(2)
-                .build()
+            Fraction.of(3, 2)
         )
     );
   }
